@@ -1,0 +1,1 @@
+# mybatis-expands-generator
