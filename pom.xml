@@ -132,18 +132,15 @@
                     </configuration>
                 </plugin>
 
+                <!-- Source -->
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-source-plugin</artifactId>
-                    <version>3.0.1</version>
-                    <configuration>
-                        <attach>true</attach>
-                    </configuration>
                     <executions>
                         <execution>
-                            <id>attach-sources</id>
+                            <phase>package</phase>
                             <goals>
-                                <goal>jar</goal>
+                                <goal>jar-no-fork</goal>
                             </goals>
                         </execution>
                     </executions>
@@ -187,7 +184,7 @@
             <id>release</id>
             <build>
                 <plugins>
-                    <!-- GPG -->
+                    <!-- GPG mvn clean deploy -P release -Dgpg.passphrase=YourPassphase-->
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-gpg-plugin</artifactId>
@@ -215,15 +212,5 @@
             </distributionManagement>
         </profile>
       </profiles>
-
-    <!-- 使用aliyun maven -->
-    <repositories>
-        <repository>
-            <id>aliyun</id>
-            <name>aliyun</name>
-            <url>http://maven.aliyun.com/nexus/content/groups/public</url>
-        </repository>
-    </repositories>
-
 
 </project>
