@@ -4,37 +4,44 @@
 
     <groupId>com.github.zk1023lang</groupId>
     <artifactId>mybatis-expands-generator</artifactId>
-    <version>1.0.0-SNAPSHOT</version>
+    <version>1.0.0</version>
     <name>mybatis-expands-generator</name>
     <packaging>jar</packaging>
     <description>mybatis create service and controller file</description>
+    <url>https://github.com/zk1023lang/mybatis-expands-generator</url>
 
     <parent>
         <groupId>org.sonatype.oss</groupId>
         <artifactId>oss-parent</artifactId>
-        <version>7</version>
+        <version>9</version>
     </parent>
+
+    <scm>
+        <connection>scm:git:git@github.com:zk1023lang/mybatis-expands-generator.git</connection>
+        <developerConnection>scm:git:git@github.com:zk1023lang/mybatis-expands-generator.git</developerConnection>
+        <url>git@github.com:zk1023lang/mybatis-expands-generator.git</url>
+        <tag>mybatis-expands-generator-1.0.0</tag>
+    </scm>
 
     <licenses>
         <license>
-            <name>The Apache License, Version 2.0</name>
+            <name>The Apache Software License, Version 2.0</name>
             <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+            <distribution>repo</distribution>
         </license>
     </licenses>
 
-
-    <scm>
-        <connection>scm:git:https://github.com/zk1023lang/mybatis-expands-generator.git</connection>
-        <developerConnection>scm:git:https://github.com/zk1023lang/mybatis-expands-generator.git</developerConnection>
-        <url>scm:git:https://github.com/zk1023lang/mybatis-expands-generator</url>
-    </scm>
     <developers>
         <developer>
             <name>zk1023lang</name>
             <email>zk1023@163.com</email>
-            <url>https://github.com/zk1023lang/mybatis-expands-generator</url>
         </developer>
     </developers>
+
+    <organization>
+        <name>Zaxxer.com</name>
+        <url>https://github.com/zk1023lang</url>
+    </organization>
 
 
     <properties>
@@ -50,7 +57,7 @@
         <mapper-spring-boot-starter>2.1.5</mapper-spring-boot-starter>
         <pagehelper-spring-boot-starter>1.2.10</pagehelper-spring-boot-starter>
 
-        <mybatis-expands-generator>1.0.0-SNAPSHOT</mybatis-expands-generator>
+        <maven.release.version>2.5.3</maven.release.version>
 
     </properties>
 
@@ -97,59 +104,79 @@
 
     <build>
         <finalName>mybatis-expands-generator</finalName>
-        <plugins>
-            <plugin>
-                <artifactId>maven-war-plugin</artifactId>
-                <version>2.1.1</version>
-            </plugin>
-            <plugin>
-                <artifactId>maven-jar-plugin</artifactId>
-                <version>2.3.2</version>
-                <executions>
-                    <execution>
-                        <id>default-jar</id>
-                        <phase>package</phase>
-                        <goals>
-                            <goal>jar</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
-            <!-- Java Compile Configurate -->
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.8.0</version>
-                <configuration>
-                    <source>${java.version}</source>
-                    <target>${java.version}</target>
-                </configuration>
-            </plugin>
-            <!-- Javadoc Plugin -->
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-javadoc-plugin</artifactId>
-                <version>2.10.3</version>
-                <configuration>
-                    <!-- 解决 java8 下发布到 maven 中心库时，生成 doc 的异常 -->
-                    <additionalparam>-Xdoclint:none</additionalparam>
-                    <encoding>${project.build.sourceEncoding}</encoding>
-                    <outputDirectory>${basedir}</outputDirectory>
-                    <reportOutputDirectory>${basedir}</reportOutputDirectory>
-                </configuration>
-            </plugin>
-        </plugins>
-    </build>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-compiler-plugin</artifactId>
+                    <version>3.7.0</version>
+                    <extensions>true</extensions>
+                    <configuration>
+                        <source>${java.version}</source>
+                        <target>${java.version}</target>
+                        <compilerArgs>-Xlint</compilerArgs>
+                    </configuration>
+                </plugin>
 
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-release-plugin</artifactId>
+                    <version>${maven.release.version}</version>
+                    <configuration>
+                        <autoVersionSubmodules>true</autoVersionSubmodules>
+                        <tagNameFormat>mybatis-expands-generator-@{project.version}</tagNameFormat>
+                    </configuration>
+                </plugin>
+
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-source-plugin</artifactId>
+                    <version>3.0.1</version>
+                    <configuration>
+                        <attach>true</attach>
+                    </configuration>
+                    <executions>
+                        <execution>
+                            <id>attach-sources</id>
+                            <goals>
+                                <goal>jar</goal>
+                            </goals>
+                        </execution>
+                    </executions>
+                </plugin>
+
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-javadoc-plugin</artifactId>
+                    <version>2.10.4</version>
+                    <configuration>
+                        <show>public</show>
+                        <attach>true</attach>
+                        <maxmemory>1024m</maxmemory>
+                    </configuration>
+                    <executions>
+                        <execution>
+                            <id>bundle-sources</id>
+                            <phase>package</phase>
+                            <goals>
+                                <goal>jar</goal>
+                            </goals>
+                        </execution>
+                    </executions>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+    </build>
+    <!--0DA8A7F1D26116ED-->
     <profiles>
         <profile>
-            <id>nexus-release</id>
+            <id>Java8</id>
             <activation>
-                <activeByDefault>true</activeByDefault>
+                <jdk>[8,)</jdk>
             </activation>
             <properties>
-                <gpg.executable>gpg</gpg.executable>
-                <gpg.passphrase>0DA8A7F1D26116ED</gpg.passphrase>
+                <sureFireForks9>true</sureFireForks9>
+                <artifact.classifier>java8</artifact.classifier>
             </properties>
         </profile>
         <profile>
