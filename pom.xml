@@ -32,13 +32,12 @@
         <developer>
             <name>zk1023lang</name>
             <email>zk1023@163.com</email>
-            <url>https://github.com/zk1023lang/mybatis-expands-generator.git</url>
+            <url>https://github.com/zk1023lang/mybatis-expands-generator</url>
         </developer>
     </developers>
 
 
     <properties>
-        <JAVA_HOME>C:\Program Files\Java\jdk1.8.0_181</JAVA_HOME>
         <java.version>1.8</java.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
@@ -109,9 +108,6 @@
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>3.8.0</version>
                 <configuration>
-                    <verbose>true</verbose>
-                    <fork>true</fork>
-                    <executable>${JAVA_HOME}/bin/javac</executable>
                     <source>${java.version}</source>
                     <target>${java.version}</target>
                 </configuration>
