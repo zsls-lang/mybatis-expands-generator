@@ -38,6 +38,7 @@
 
 
     <properties>
+        <JAVA_HOME>C:\Program Files\Java\jdk1.8.0_181</JAVA_HOME>
         <java.version>1.8</java.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
@@ -108,22 +109,25 @@
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>3.8.0</version>
                 <configuration>
+                    <verbose>true</verbose>
+                    <fork>true</fork>
+                    <executable>${JAVA_HOME}/bin/javac</executable>
                     <source>${java.version}</source>
                     <target>${java.version}</target>
                 </configuration>
             </plugin>
-            <plugin>
+            <!--<plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-javadoc-plugin</artifactId>
                 <version>3.0.1</version>
                 <configuration>
-                    <!-- 解决 java8 下发布到 maven 中心库时，生成 doc 的异常 -->
+                    &lt;!&ndash; 解决 java8 下发布到 maven 中心库时，生成 doc 的异常 &ndash;&gt;
                     <additionalparam>-Xdoclint:none</additionalparam>
                     <encoding>${project.build.sourceEncoding}</encoding>
                     <outputDirectory>${basedir}</outputDirectory>
                     <reportOutputDirectory>${basedir}</reportOutputDirectory>
                 </configuration>
-            </plugin>
+            </plugin>-->
         </plugins>
     </build>
 
