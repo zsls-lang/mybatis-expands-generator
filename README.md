@@ -5,20 +5,20 @@ pom.xml 添加下面信息
     <build>
         <plugins>
             <plugin>
-                **<groupId>org.mybatis.generator</groupId>
+                <groupId>org.mybatis.generator</groupId>
                 <artifactId>mybatis-generator-maven-plugin</artifactId>
-                <version>1.3.7</version>**
+                <version>1.3.7</version>
                 <configuration>
                     <configurationFile>${basedir}/src/main/resources/generator/generatorConfig.xml</configurationFile>
                     <overwrite>true</overwrite>
                     <verbose>true</verbose>
                 </configuration>
                 <dependencies>
-                    **<dependency>
+                    <dependency>
                         <groupId>com.github.zk1023lang</groupId>
                         <artifactId>mybatis-expands-generator</artifactId>
                         <version>1.0.0</version>
-                    </dependency>**
+                    </dependency>
                 </dependencies>
             </plugin>
         </plugins>
