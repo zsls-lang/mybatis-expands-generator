@@ -1,6 +1,32 @@
 # mybatis-expands-generator
 
 使用方式可以参考下面示例
+pom.xml 添加下面信息
+    <build>
+        <plugins>
+            <plugin>
+                **<groupId>org.mybatis.generator</groupId>
+                <artifactId>mybatis-generator-maven-plugin</artifactId>
+                <version>1.3.7</version>**
+                <configuration>
+                    <configurationFile>${basedir}/src/main/resources/generator/generatorConfig.xml</configurationFile>
+                    <overwrite>true</overwrite>
+                    <verbose>true</verbose>
+                </configuration>
+                <dependencies>
+                    **<dependency>
+                        <groupId>com.github.zk1023lang</groupId>
+                        <artifactId>mybatis-expands-generator</artifactId>
+                        <version>1.0.0</version>
+                    </dependency>**
+                </dependencies>
+            </plugin>
+        </plugins>
+    </build>
+
+
+**generatorConfig.xml**
+
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE generatorConfiguration
         PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
