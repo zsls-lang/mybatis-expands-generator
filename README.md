@@ -2,6 +2,7 @@
 
 使用方式可以参考下面示例
 pom.xml 添加下面信息
+
     <build>
         <plugins>
             <plugin>
