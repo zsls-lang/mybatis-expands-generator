@@ -1,4 +1,4 @@
-package com.zsls.config;
+package com.github.zsls.config;
 
 import org.mybatis.generator.api.CommentGenerator;
 import org.mybatis.generator.api.IntrospectedColumn;
