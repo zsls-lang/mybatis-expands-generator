@@ -4,7 +4,7 @@
 
     <groupId>com.github.zsls-lang</groupId>
     <artifactId>mybatis-expands-generator</artifactId>
-    <version>1.0.0</version>
+    <version>1.1.0</version>
     <name>mybatis-expands-generator</name>
     <packaging>jar</packaging>
     <description>mybatis create service and controller file</description>
