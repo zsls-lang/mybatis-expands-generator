@@ -2,13 +2,13 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.github.zk1023lang</groupId>
+    <groupId>com.github.zsls-lang</groupId>
     <artifactId>mybatis-expands-generator</artifactId>
     <version>1.0.0</version>
     <name>mybatis-expands-generator</name>
     <packaging>jar</packaging>
     <description>mybatis create service and controller file</description>
-    <url>https://github.com/zk1023lang/mybatis-expands-generator</url>
+    <url>https://github.com/zsls-lang/mybatis-expands-generator</url>
 
     <parent>
         <groupId>org.sonatype.oss</groupId>
@@ -17,9 +17,9 @@
     </parent>
 
     <scm>
-        <connection>scm:git:git@github.com:zk1023lang/mybatis-expands-generator.git</connection>
-        <developerConnection>scm:git:git@github.com:zk1023lang/mybatis-expands-generator.git</developerConnection>
-        <url>git@github.com:zk1023lang/mybatis-expands-generator.git</url>
+        <connection>scm:git:git@github.com:zsls-lang/mybatis-expands-generator.git</connection>
+        <developerConnection>scm:git:git@github.com:zsls-lang/mybatis-expands-generator.git</developerConnection>
+        <url>git@github.com:zsls-lang/mybatis-expands-generator.git</url>
         <tag>mybatis-expands-generator-1.0.0</tag>
     </scm>
 
@@ -33,14 +33,14 @@
 
     <developers>
         <developer>
-            <name>zk1023lang</name>
+            <name>zsls</name>
             <email>zk1023@163.com</email>
         </developer>
     </developers>
 
     <organization>
         <name>Zaxxer.com</name>
-        <url>https://github.com/zk1023lang</url>
+        <url>https://github.com/zsls-lang</url>
     </organization>
 
 
@@ -48,16 +48,16 @@
         <java.version>1.8</java.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-        <commons-lang3>3.8.1</commons-lang3>
+        <commons-lang3>3.11</commons-lang3>
 
-        <mysql-connector-java>5.1.47</mysql-connector-java>
+        <mysql-connector-java>5.1.49</mysql-connector-java>
 
         <mybatis-generator-core>1.3.7</mybatis-generator-core>
         <mapper-generator>1.1.5</mapper-generator>
         <mapper-spring-boot-starter>2.1.5</mapper-spring-boot-starter>
         <pagehelper-spring-boot-starter>1.2.10</pagehelper-spring-boot-starter>
 
-        <maven.release.version>2.5.3</maven.release.version>
+<!--        <maven.release.version>2.5.3</maven.release.version>-->
 
     </properties>
 
@@ -225,8 +225,8 @@
                     <plugin>
                         <artifactId>maven-compiler-plugin</artifactId>
                         <configuration>
-                            <source>1.6</source>
-                            <target>1.6</target>
+                            <source>${java.version}</source>
+                            <target>${java.version}</target>
                         </configuration>
                     </plugin>
                     <plugin>
@@ -250,8 +250,8 @@
                     <plugin>
                         <artifactId>maven-compiler-plugin</artifactId>
                         <configuration>
-                            <source>1.6</source>
-                            <target>1.6</target>
+                            <source>${java.version}</source>
+                            <target>${java.version}</target>
                         </configuration>
                     </plugin>
                     <!-- Source -->

@@ -578,14 +578,16 @@ public class MapperPlugin extends FalseMethodPlugin {
 	 * @param topLevelClass
 	 */
 	protected void addControllerField(TopLevelClass topLevelClass, String tableName) {
-		// add dao
-		Field field = new Field();
-		field.setName(toLowerCase(serviceType.getShortName())); // set var name
-		topLevelClass.addImportedType(serviceType);
-		field.setType(serviceType); // type
-		field.setVisibility(JavaVisibility.PRIVATE);
-		field.addAnnotation("@Autowired");
-		topLevelClass.addField(field);
+		// add service
+		if (enableCreateService) {
+			Field field = new Field();
+			field.setName(toLowerCase(serviceType.getShortName())); // set var name
+			topLevelClass.addImportedType(serviceType);
+			field.setType(serviceType); // type
+			field.setVisibility(JavaVisibility.PRIVATE);
+			field.addAnnotation("@Autowired");
+			topLevelClass.addField(field);
+		}
 	}
 
 
