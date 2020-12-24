@@ -169,6 +169,9 @@
                             <additionalOptions>
                                 <additionalOption>-Xdoclint:none</additionalOption>
                             </additionalOptions>
+                            <show>public</show>
+                            <attach>true</attach>
+                            <maxmemory>1024m</maxmemory>
                         </configuration>
                         <executions>
                             <execution>
