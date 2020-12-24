@@ -20,7 +20,7 @@
         <connection>scm:git:git@github.com:zsls-lang/mybatis-expands-generator.git</connection>
         <developerConnection>scm:git:git@github.com:zsls-lang/mybatis-expands-generator.git</developerConnection>
         <url>git@github.com:zsls-lang/mybatis-expands-generator.git</url>
-        <tag>mybatis-expands-generator-1.0.0</tag>
+        <tag>mybatis-expands-generator-@{project.version}</tag>
     </scm>
 
     <licenses>
@@ -33,7 +33,7 @@
 
     <developers>
         <developer>
-            <name>zsls</name>
+            <name>zsls-lang</name>
             <email>zk1023@163.com</email>
         </developer>
     </developers>
