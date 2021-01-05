@@ -39,7 +39,7 @@ pom.xml 添加下面信息
         <property name="javaFileEncoding" value="UTF-8"/>
 
 
-        <plugin type="com.zsls.config.MapperPlugin">
+        <plugin type="com.github.zsls.config.MapperPlugin">
             <property name="mappers" value="com.zsls.base.BaseMapper"/>
             <property name="targetPackage" value="com.zsls.service" />
             <property name="targetProject" value="src/main/java" />
@@ -58,7 +58,7 @@ pom.xml 添加下面信息
         </plugin>
 
         <!-- 这里的type里写的是你的实现类的类全路径 -->
-        <commentGenerator type="com.zsls.config.MybatisCommentGenerator" >
+        <commentGenerator type="com.github.zsls.config.MybatisCommentGenerator" >
             <property name="suppressAllComments" value="false"/>
             <!--<property name="suppressDate" value="true"/>-->
         </commentGenerator>
