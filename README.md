@@ -16,9 +16,9 @@ pom.xml 添加下面信息
                 </configuration>
                 <dependencies>
                     <dependency>
-                        <groupId>com.github.zk1023lang</groupId>
+                        <groupId>com.github.zsls-lang</groupId>
                         <artifactId>mybatis-expands-generator</artifactId>
-                        <version>1.0.0</version>
+                        <version>1.1.0</version>
                     </dependency>
                 </dependencies>
             </plugin>
@@ -65,12 +65,12 @@ pom.xml 添加下面信息
 
 
         <jdbcConnection driverClass="com.mysql.jdbc.Driver"
-                        connectionURL="jdbc:mysql://172.16.4.67:3306/bigdata_hbt?useSSL=false"
+                        connectionURL="jdbc:mysql://224.16.4.67:3306/data_test?useSSL=false"
                         userId="root"
-                        password="sunmnet123">
+                        password="password">
         </jdbcConnection>
 
-        <!--<javaModelGenerator targetPackage="com.sunmnet.basedata.model" targetProject="D:\sunmnet_work_new\xnykdx\BigData.XNYKDX.WEB\sunmnet-basedata\sunmnet-basedata-model\src/main/java"/>-->
+        <!--<javaModelGenerator targetPackage="com.sunmnet.basedata.model" targetProject="D:\work_new\dx\Data.WEB\basedata\basedata-model\src/main/java"/>-->
         <javaModelGenerator targetPackage="com.zsls.entity" targetProject="src/main/java" >
             <!--<property name="immutable" value="true"/>-->
             <property name="rootClass" value="com.zsls.base.BaseModel"/>
