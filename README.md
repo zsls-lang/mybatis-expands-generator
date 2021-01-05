@@ -70,7 +70,7 @@ pom.xml 添加下面信息
                         password="password">
         </jdbcConnection>
 
-        <!--<javaModelGenerator targetPackage="com.sunmnet.basedata.model" targetProject="D:\work_new\dx\Data.WEB\basedata\basedata-model\src/main/java"/>-->
+        <!--<javaModelGenerator targetPackage="com.zsls.basedata.model" targetProject="D:\work_new\dx\Data.WEB\basedata\basedata-model\src/main/java"/>-->
         <javaModelGenerator targetPackage="com.zsls.entity" targetProject="src/main/java" >
             <!--<property name="immutable" value="true"/>-->
             <property name="rootClass" value="com.zsls.base.BaseModel"/>
