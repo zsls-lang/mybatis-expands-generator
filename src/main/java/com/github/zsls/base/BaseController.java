@@ -5,7 +5,7 @@ import org.slf4j.LoggerFactory;
 
 /**
  *@ClassName BaseController
- *@Description TODO
+ *@Description base基类
  *@Date 2019/2/16 9:49
  *@Version 1.0
  */
